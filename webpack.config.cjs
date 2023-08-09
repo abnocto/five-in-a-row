@@ -3,6 +3,7 @@
 const path = require('path');
 const {VueLoaderPlugin} = require('vue-loader');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const {version} = require('./package');
 
 module.exports = {
 	mode: 'production',
@@ -44,7 +45,8 @@ module.exports = {
 	plugins: [
 		new VueLoaderPlugin(),
 		new HtmlWebpackPlugin({
-			template: './src/template/index.html'
+			template: './src/template/index.html',
+			title: `Five In a Row v${version}`
 		})
 	],
 	resolve: {
