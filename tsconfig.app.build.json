@@ -4,6 +4,7 @@
     "outDir": "./dist"
   },
   "exclude": [
+    "**/*.spec.ts",
     "src/view/**/*",
     "src/template/**/*"
   ]

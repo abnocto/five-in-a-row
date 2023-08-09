@@ -7,55 +7,55 @@ export const getNeighbourCellsParams = ({x, y}: PointInfo): NeighbourCellParams[
 			x: x - 1,
 			y: y - 1
 		},
-		neighbourDirection: 'diagonal'
+		neighbourDirection: 'nw'
 	},
 	{
 		neighbourCoords: {
 			x: x,
 			y: y - 1
 		},
-		neighbourDirection: 'row'
+		neighbourDirection: 'n'
 	},
 	{
 		neighbourCoords: {
 			x: x + 1,
 			y: y - 1
 		},
-		neighbourDirection: 'diagonal'
+		neighbourDirection: 'ne'
 	},
 	{
 		neighbourCoords: {
 			x: x - 1,
 			y: y
 		},
-		neighbourDirection: 'line'
+		neighbourDirection: 'w'
 	},
 	{
 		neighbourCoords: {
 			x: x + 1,
 			y: y
 		},
-		neighbourDirection: 'line'
+		neighbourDirection: 'e'
 	},
 	{
 		neighbourCoords: {
 			x: x - 1,
 			y: y + 1
 		},
-		neighbourDirection: 'diagonal'
+		neighbourDirection: 'sw'
 	},
 	{
 		neighbourCoords: {
 			x: x,
 			y: y + 1
 		},
-		neighbourDirection: 'row'
+		neighbourDirection: 's'
 	},
 	{
 		neighbourCoords: {
 			x: x + 1,
 			y: y + 1
 		},
-		neighbourDirection: 'diagonal'
+		neighbourDirection: 'se'
 	}
 ];

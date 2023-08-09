@@ -1,7 +1,7 @@
 import {Cell} from '../cell';
 import type {PointInfo} from '../../../../common/types/structures';
 
-type Direction = 'line' | 'row' | 'diagonal';
+type Direction = 'nw' | 'n' | 'ne' | 'w' | 'e' | 'sw' | 's' | 'se';
 
 export type QueueItem = {
 	cell: Cell;
