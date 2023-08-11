@@ -28,5 +28,6 @@ defineProps<Props>();
 .player-info-avatar {
 	background-color: v-bind('player.color');
 	border: v-bind('active ? "3px solid #000000" : "none"');
+	box-sizing: border-box;
 }
 </style>

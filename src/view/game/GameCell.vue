@@ -1,12 +1,12 @@
 <script setup lang='ts'>
-import {ref, watchEffect} from 'vue';
-import type {Ref} from 'vue';
-import type {CellInfo, PointInfo} from '../../common/types/structures';
+import {computed} from 'vue';
+import type {CellInfo, PointInfo, PlayerInfo} from '../../common/types/structures';
 
 type Props = {
 	cell: CellInfo;
-	myColor: string;
+	player: PlayerInfo;
 	active: boolean;
+	isLastFilledCell: boolean;
 };
 
 type Emits = {
@@ -16,13 +16,8 @@ type Emits = {
 const props = defineProps<Props>();
 const emit = defineEmits<Emits>();
 
-const isClickable: Ref<boolean> = ref(false);
-const cellColor: Ref<string> = ref('');
-
-watchEffect(() => {
-	isClickable.value = props.active && !props.cell.color;
-	cellColor.value = props.cell.color || '#ffffff';
-});
+const isClickable = computed(() => props.active && !props.cell.color);
+const cellColor = computed(() => props.cell.color || '#ffffff');
 
 const handleClick = () => {
 	if (!isClickable.value) {
@@ -40,11 +35,16 @@ const handleClick = () => {
 	<div
 		class='game-cell'
 		@click='handleClick'
-	/>
+	>
+		{{ isLastFilledCell ? '*' : '' }}
+	</div>
 </template>
 
 <style>
 .game-cell {
+	display: flex;
+	align-items: center;
+	justify-content: center;
 	width: 30px;
 	height: 30px;
 	border: 1px solid #aaaaaa;
@@ -53,6 +53,7 @@ const handleClick = () => {
 }
 
 .game-cell:hover {
-	background-color: v-bind('isClickable ? myColor : cellColor');
+	background-color: v-bind('isClickable ? player.color : cellColor');
+	opacity: v-bind('isClickable ? "0.5" : "1"');
 }
 </style>

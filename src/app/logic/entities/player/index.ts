@@ -1,4 +1,4 @@
-import {COLORS, NAMES} from './constants'
+import {GAME_CREATOR_COLORS, GAME_JOINED_COLORS, GAME_CREATOR_NAMES, GAME_JOINED_NAMES} from './constants'
 import type {PlayerInfo} from '../../../../common/types/structures';
 
 export class Player {
@@ -7,12 +7,12 @@ export class Player {
 		private readonly _color: string
 	) {}
 
-	static getRandomPlayerInfo() {
+	static getRandomPlayerInfo(isGameCreator: boolean) {
 		const getRandomValue = <T>(values: T[]) => values[Math.floor(Math.random() * values.length)];
 
 		return {
-			name: getRandomValue(NAMES),
-			color: getRandomValue(COLORS)
+			name: getRandomValue(isGameCreator ? GAME_CREATOR_NAMES : GAME_JOINED_NAMES),
+			color: getRandomValue(isGameCreator ? GAME_CREATOR_COLORS : GAME_JOINED_COLORS)
 		};
 	}
 

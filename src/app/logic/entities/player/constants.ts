@@ -1,8 +1,8 @@
-export const NAMES: string[] = [
+export const GAME_CREATOR_NAMES: string[] = [
 	'RuskCockroach',
 	'SaucesPlover',
 	'JuicesCow',
-	'GuacamoleJackrabbit',
+	'PastaJackrabbit',
 	'ClementineAuk',
 	'CreamyElephant',
 	'ClamsCoyote',
@@ -12,55 +12,42 @@ export const NAMES: string[] = [
 	'CloveLeveret',
 	'WalnutsViper',
 	'RissolesWigeon',
-	'BrowniesRoedeer',
-	'GateauWoodcock',
-	'SardinesBlackbird',
+	'AppleBlackbird',
 	'KidneyKapi',
 	'PapayaWren',
-	'ArtichokeWaterfowl',
-	'RaspberriesThrush',
 	'LeeksHinds',
-	'MuesliHart',
-	'SambarBloodhound',
-	'ButternutMinnow',
-	'PastieWoodchuck',
-	'HaggisMackerel',
+	'MuesliHart'
+];
+
+export const GAME_JOINED_NAMES: string[] = [
 	'VenisonHound',
 	'RicottaCrane',
-	'BasmatiFlyingfish',
+	'CornFish',
 	'RavioliLlama',
-	'TomatoeSwan',
+	'TomatoSwan',
 	'ShortbreadMule',
 	'SmoothieBongo',
 	'CoconutWasp',
-	'BolognaseBadger',
+	'BananaBadger',
 	'BoiledTurtle',
 	'RyeGerbil',
-	'SueyBoars',
-	'LolliesDunlin',
-	'IcecreamBittern',
+	'RyeBittern',
 	'RindHeron',
 	'CrabFerret',
-	'OatmealIbexe',
 	'PlumsHawk',
 	'CanolaYak',
-	'BlueberriesDogfish',
-	'ScallopsMandrill',
-	'PistachioWildcat',
-	'HorseradishBacteria',
-	'MapleOwl'
+	'RiceBacteria',
+	'PistachioOwl'
 ];
 
-export const COLORS: string[] = [
+export const GAME_CREATOR_COLORS: string[] = [
 	'#ff80ed',
-	'#008080',
-	'#ff0000',
-	'#ffd700',
-	'#ff7373',
-	'#0000ff',
-	'#40e0d0',
-	'#800000',
-	'#800080',
+	'#ff1d58',
+	'#FA9A50'
+];
+
+export const GAME_JOINED_COLORS: string[] = [
+	'#51e2f5',
+	'#fff685',
 	'#00ff00',
-	'#008000',
 ];
