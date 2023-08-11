@@ -6,6 +6,7 @@ import type {QueueItem} from './types';
 
 export class Field {
 	private readonly _cellsMap: Cell[][] = [];
+	private _lastFilledCell: Cell | null = null;
 
 	constructor() {
 		this._generateCells();
@@ -23,6 +24,7 @@ export class Field {
 		}
 
 		cell.fill(color);
+		this._lastFilledCell = cell;
 	}
 
 	isCompleted() {
@@ -83,7 +85,8 @@ export class Field {
 		return {
 			cellsMap: this._cellsMap.map((cells) => {
 				return cells.map((cell) => cell.toJson());
-			})
+			}),
+			lastFilledCell: this._lastFilledCell?.toJson() || null
 		};
 	}
 

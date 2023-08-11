@@ -27,7 +27,7 @@ export class Interactor implements IInteractor {
 
 		this._status = Status.WaitingForOpponent;
 
-		const playerInfo = Player.getRandomPlayerInfo();
+		const playerInfo = Player.getRandomPlayerInfo(true);
 		this._game.setPlayer(playerInfo);
 
 		this._networkManager.sendGameCreatedInfo(hostname, playerInfo);
@@ -41,7 +41,7 @@ export class Interactor implements IInteractor {
 
 		this._status = Status.WaitingForPlayer;
 
-		const playerInfo = Player.getRandomPlayerInfo();
+		const playerInfo = Player.getRandomPlayerInfo(false);
 		this._game.setPlayer(playerInfo);
 
 		this._networkManager.waitForGameCreation();

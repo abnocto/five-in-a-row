@@ -17,6 +17,7 @@ export type CellInfo = {
 
 export type FieldInfo = {
 	cellsMap: CellInfo[][];
+	lastFilledCell: CellInfo | null;
 };
 
 export type GameInfo = {

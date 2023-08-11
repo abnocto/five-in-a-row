@@ -1,10 +1,10 @@
 <script setup lang='ts'>
 import GameCell from './GameCell.vue';
-import type {FieldInfo, PointInfo} from '../../common/types/structures';
+import type {FieldInfo, PointInfo, PlayerInfo} from '../../common/types/structures';
 
 type Props = {
 	field: FieldInfo;
-	myColor: string;
+	player: PlayerInfo;
 	active: boolean;
 };
 
@@ -30,8 +30,10 @@ const handleChooseCell = (pointInfo: PointInfo) => {
 			v-for='(cell, cellIndex) in cellRow'
 			:key='cellIndex'
 			:cell='cell'
-			:my-color='myColor'
+			:player='player'
 			:active='active'
+			:is-last-filled-cell='field.lastFilledCell?.point.x === cell.point.x
+				&& field.lastFilledCell.point.y === cell.point.y'
 			@choose='handleChooseCell'
 		/>
 	</div>

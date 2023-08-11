@@ -36,7 +36,7 @@ onMounted(() => {
 			<div class='step-game-area-field'>
 				<GameField
 					:field='game.field'
-					:my-color='game.player.color'
+					:player='game.player'
 					:active='game.isPlayerTurn && !game.result'
 					@choose-cell='chooseCellHandler'
 				/>
